@@ -1,1 +1,12 @@
 
+# app/ program that pulls up info on mma fighters
+# enter in name to pull up fighter, or weight class for list of fighters
+# sorts by gender
+# sorts by belt holders
+# sorts by w/l ratio
+
+from BeautifulSoup import BeautifulSoup
+
+def get_info():
+    url = "https://en.wikipedia.org/wiki/List_of_current_UFC_fighters"
+    

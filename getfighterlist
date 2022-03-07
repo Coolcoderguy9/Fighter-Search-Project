@@ -1,12 +1,40 @@
-
 # app/ program that pulls up info on mma fighters
 # enter in name to pull up fighter, or weight class for list of fighters
 # sorts by gender
 # sorts by belt holders
 # sorts by w/l ratio
 
-from BeautifulSoup import BeautifulSoup
+# import bs4 as bs
+
+import requests
+import urllib.request
+from pprint import pprint
+from html_table_parser.parser import HTMLTableParser as ht
+import pandas as pd
+
+
+def url_get_contents(url):
+    """ Opens a website and read its binary contents (HTTP Response Body) """
+    req = urllib.request.Request(url=url)
+    f = urllib.request.urlopen(req)
+    return f.read()
 
 def get_info():
     url = "https://en.wikipedia.org/wiki/List_of_current_UFC_fighters"
-    
+    xhtml = url_get_contents(url).decode('utf-8')
+#     page = requests.get(url)
+#     doc = lh.fromstring(page.content)
+#     tr_elements = doc.xpath('//tr')
+#     col = []
+#     i = 0
+#     for t in tr_elements[1]:
+#         i += 1
+#         name = t.text_content()
+#         print('%d:"%s"'%(i, name))
+#         col.append((name, []))
+    p = ht()
+    p.feed(xhtml)
+    pprint(p.tables[9])
+    print(pd.DataFrame(p.tables[9]))
+
+get_info()

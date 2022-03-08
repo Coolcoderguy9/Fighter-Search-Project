@@ -34,7 +34,17 @@ def get_info():
 #         col.append((name, []))
     p = ht()
     p.feed(xhtml)
-    pprint(p.tables[9])
-    print(pd.DataFrame(p.tables[9]))
-
-get_info()
+#     pprint(p.tables[9])
+#     print(pd.DataFrame(p.tables[9]))
+    col = ['ISO', 'Age', 'Ht.', 'Result/ next fight/ status', 'Ref', 'Endeavor record']
+    fighter = input('Enter fighter name: ')
+#     nickname = input('Enter fighter nickname: ')
+#     record = input('Enter mma record: ')
+#     criteria = input('enter search criteria: ')
+#     df = pd.DataFrame(p.tables[9])
+#     df = df.drop(col, axis = 1)
+    df = pd.DataFrame(p.tables[9])
+    result = df.loc[df[1] == fighter]
+    return result
+    
+print(get_info())

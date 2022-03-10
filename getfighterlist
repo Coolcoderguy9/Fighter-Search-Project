@@ -15,13 +15,105 @@ import pandas as pd
 
 def url_get_contents(url):
     """ Opens a website and read its binary contents (HTTP Response Body) """
+    
     req = urllib.request.Request(url=url)
     f = urllib.request.urlopen(req)
     return f.read()
 
 def get_info():
+    #after reading and decoding html, parses tables
+    #checks for specific table (weight class)
+    #returns row from table if valid input
+    
     url = "https://en.wikipedia.org/wiki/List_of_current_UFC_fighters"
     xhtml = url_get_contents(url).decode('utf-8')
+    p = ht()
+    p.feed(xhtml)
+    
+    weight_class = input('Enter weight class: ')
+    
+    if weight_class == 'Heavyweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[9])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Light heavyweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[10])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Middleweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[11])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Welterweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[12])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Lightweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[13])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Featherweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[14])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Bantamweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[15])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Flyweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[16])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Female featherweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[17])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Female bantamweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[18])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Female flyweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[19])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+    elif weight_class == 'Female strawweight':
+        fighter = input('Enter fighter name: ')
+        df = pd.DataFrame(p.tables[20])
+        result = df.loc[df[1] == fighter]
+        return result
+    
+
+
+print(get_info())
+
+
+
+#     df = pd.DataFrame(p.tables[9])
+#     df = df.drop(col, axis = 1)
+#     pprint(p.tables[9])
+#     print(pd.DataFrame(p.tables[9]))
 #     page = requests.get(url)
 #     doc = lh.fromstring(page.content)
 #     tr_elements = doc.xpath('//tr')
@@ -32,19 +124,3 @@ def get_info():
 #         name = t.text_content()
 #         print('%d:"%s"'%(i, name))
 #         col.append((name, []))
-    p = ht()
-    p.feed(xhtml)
-#     pprint(p.tables[9])
-#     print(pd.DataFrame(p.tables[9]))
-    col = ['ISO', 'Age', 'Ht.', 'Result/ next fight/ status', 'Ref', 'Endeavor record']
-    fighter = input('Enter fighter name: ')
-#     nickname = input('Enter fighter nickname: ')
-#     record = input('Enter mma record: ')
-#     criteria = input('enter search criteria: ')
-#     df = pd.DataFrame(p.tables[9])
-#     df = df.drop(col, axis = 1)
-    df = pd.DataFrame(p.tables[9])
-    result = df.loc[df[1] == fighter]
-    return result
-    
-print(get_info())

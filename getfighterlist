@@ -33,86 +33,130 @@ def get_info():
     n = False
     x = False
     while n is False:
+        print("Weight class values are\n 1-Heavy\n 2-Light heavy\n 3-Middle\n 4-Welter\n 5-Light\n 6-Feather\n 7-Bantam\n 8-Fly\n 9-Female feather\n 10-Female bantam\n 11-Female fly\n 12-Female straw\n")
         weight_class = input('\nEnter weight class: ')
-        if weight_class == 'Heavyweight':
-            n = True
+        if weight_class == 'Heavyweight' or 1:
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[9])
-                if fighter in df[1]:
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+    
+        elif weight_class == 'Light heavyweight' or 2:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[10])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Middleweight' or 3:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[11])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Welterweight' or 4:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[12])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Lightweight' or 5:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[13])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Featherweight' or 6:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[14])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Bantamweight' or 7:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[15])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Flyweight' or 8:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[16])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Female featherweight' or 9:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[17])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Female bantamweight' or 10:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[18])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Female flyweight' or 11:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[19])
+                if fighter in df[1].values:
+                    result = df.loc[df[1] == fighter]
+                    return result
+                else:
+                    print('\nEnter valid fighter name (First Last)')
+        
+        elif weight_class == 'Female strawweight' or 12:
+            while x is False:
+                fighter = input('\nEnter fighter name: ')
+                df = pd.DataFrame(p.tables[20])
+                if fighter in df[1].values:
                     result = df.loc[df[1] == fighter]
                     return result
                 else:
                     print('\nEnter valid fighter name (First Last)')
         else:
-            print("\nEnter valid weightclass")
-    
-#     elif weight_class == 'Light heavyweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[10])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Middleweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[11])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Welterweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[12])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Lightweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[13])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Featherweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[14])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Bantamweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[15])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Flyweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[16])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Female featherweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[17])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Female bantamweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[18])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Female flyweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[19])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#     
-#     elif weight_class == 'Female strawweight':
-#         fighter = input('Enter fighter name: ')
-#         df = pd.DataFrame(p.tables[20])
-#         result = df.loc[df[1] == fighter]
-#         return result
-#         
+            print("\nEnter valid weightclass (<class>weight or corresponding number)\n")
+        
     
 
 

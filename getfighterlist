@@ -6,9 +6,7 @@
 
 # import bs4 as bs
 
-import requests
 import urllib.request
-from pprint import pprint
 from html_table_parser.parser import HTMLTableParser as ht
 import pandas as pd
 

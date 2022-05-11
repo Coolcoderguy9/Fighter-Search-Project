@@ -33,7 +33,7 @@ def get_info():
     while n is False:
         print("Weight class values are\n 1-Heavy\n 2-Light heavy\n 3-Middle\n 4-Welter\n 5-Light\n 6-Feather\n 7-Bantam\n 8-Fly\n 9-Female feather\n 10-Female bantam\n 11-Female fly\n 12-Female straw\n")
         weight_class = input('\nEnter weight class: ')
-        if weight_class == 'Heavyweight' or 1:
+        if weight_class == 'Heavyweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[9])
@@ -43,7 +43,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
     
-        elif weight_class == 'Light heavyweight' or 2:
+        elif weight_class == 'Light heavyweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[10])
@@ -53,7 +53,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Middleweight' or 3:
+        elif weight_class == 'Middleweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[11])
@@ -63,7 +63,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Welterweight' or 4:
+        elif weight_class == 'Welterweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[12])
@@ -73,7 +73,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Lightweight' or 5:
+        elif weight_class == 'Lightweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[13])
@@ -83,7 +83,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Featherweight' or 6:
+        elif weight_class == 'Featherweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[14])
@@ -93,7 +93,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Bantamweight' or 7:
+        elif weight_class == 'Bantamweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[15])
@@ -103,7 +103,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Flyweight' or 8:
+        elif weight_class == 'Flyweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[16])
@@ -113,7 +113,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Female featherweight' or 9:
+        elif weight_class == 'Female featherweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[17])
@@ -123,7 +123,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Female bantamweight' or 10:
+        elif weight_class == 'Female bantamweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[18])
@@ -133,7 +133,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Female flyweight' or 11:
+        elif weight_class == 'Female flyweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[19])
@@ -143,7 +143,7 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         
-        elif weight_class == 'Female strawweight' or 12:
+        elif weight_class == 'Female strawweight':
             while x is False:
                 fighter = input('\nEnter fighter name: ')
                 df = pd.DataFrame(p.tables[20])
@@ -153,9 +153,26 @@ def get_info():
                 else:
                     print('\nEnter valid fighter name (First Last)')
         else:
-            print("\nEnter valid weightclass (<class>weight or corresponding number)\n")
+            print("\nEnter valid weightclass  (<class>weight)\n")
         
     
 
 
 print(get_info())
+
+
+
+#     df = pd.DataFrame(p.tables[9])
+#     df = df.drop(col, axis = 1)
+#     pprint(p.tables[9])
+#     print(pd.DataFrame(p.tables[9]))
+#     page = requests.get(url)
+#     doc = lh.fromstring(page.content)
+#     tr_elements = doc.xpath('//tr')
+#     col = []
+#     i = 0
+#     for t in tr_elements[1]:
+#         i += 1
+#         name = t.text_content()
+#         print('%d:"%s"'%(i, name))
+#         col.append((name, []))
